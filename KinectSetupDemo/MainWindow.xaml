@@ -1,8 +1,9 @@
 ﻿<Window x:Class="KinectSetupDemo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded" xmlns:my="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers" Closing="Window_Closing">
+        Title="MainWindow" Height="433" Width="725" Loaded="Window_Loaded" xmlns:my="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers" Closing="Window_Closing">
     <Grid Loaded="Window_Loaded">
-        <my:KinectSensorChooser HorizontalAlignment="Left" Margin="84,66,0,0" Name="kinectSensorChooser1" VerticalAlignment="Top" Width="328" />
+        <my:KinectSensorChooser HorizontalAlignment="Left" Margin="75,54,0,0" Name="kinectSensorChooser1" VerticalAlignment="Top" Width="199" Height="221" />
+        <my:KinectColorViewer HorizontalAlignment="Left" Margin="371,35,0,0" Name="kinectColorViewer1" VerticalAlignment="Top" Height="240" Width="320" Kinect="{Binding ElementName=kinectSensorChooser1, Path=Kinect}" />
     </Grid>
 </Window>

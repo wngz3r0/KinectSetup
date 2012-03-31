@@ -52,7 +52,18 @@ namespace KinectSetupDemo
 
         void _sensor_AllFramesReady(object sender, AllFramesReadyEventArgs e)
         {
-            //throw new NotImplementedException();
+            //using (ColorImageFrame colorFrame = e.OpenColorImageFrame())
+            //{
+            //    if (colorFrame == null) // This could happen if frames get dropped
+            //    {
+            //        return;
+            //    }
+
+            //    byte[] pixels = new byte[colorFrame.PixelDataLength];
+            //    colorFrame.CopyPixelDataTo(pixels);
+            //    int stride = colorFrame.Width * 4; // How many bytes do you need on a per-row basis. BGR32 means blue, green, red, empty, aka 4 pixels * the width
+            //    image1.Source = BitmapSource.Create(colorFrame.Width, colorFrame.Height, 96, 96, PixelFormats.Bgr32, null, pixels, stride);
+            //}
         }
 
         void StopKinect(KinectSensor sensor)
@@ -67,6 +78,11 @@ namespace KinectSetupDemo
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             StopKinect(kinectSensorChooser1.Kinect);
+        }
+
+        private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
         }
     }
 }
